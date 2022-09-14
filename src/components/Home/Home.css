@@ -1,0 +1,12 @@
+#home h1 {
+  /**/
+}
+
+.link-icon {
+  @apply relative h-full ml-1;
+}
+.link-icon svg {
+  @apply h-4 w-4 fill-white-c-1 absolute top-1/2 left-1/2 transition-all duration-150
+        hover:fill-white-c-2 hover:scale-125
+        active:fill-white-c-4 active:scale-75;
+}
