@@ -1,0 +1,19 @@
+.game {
+}
+.game h1 {
+  @apply pt-1;
+}
+
+.game .rows {
+  @apply flex justify-center
+    mb-[11px] gap-x-[11px]
+    sm:mb-[20px] sm:gap-x-[20px];
+}
+.game .ball {
+  @apply rounded-full
+    h-[110px] w-[110px] 
+    sm:h-[200px] sm:w-[200px];
+}
+.active-ball {
+  @apply bg-white-c-4;
+}

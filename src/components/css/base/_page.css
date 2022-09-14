@@ -13,7 +13,7 @@ body {
 }
 h1 {
   @apply text-center
-    text-4xl md:text-6xl
+    text-4xl sm:text-5xl md:text-6xl
     py-8;
 }
 
@@ -36,12 +36,10 @@ h1 {
   active:text-white-c-4
   hover:after:w-1/2
   hover:after:left-1/4
-  hover:after:h-0.5
   hover:after:bg-white-c-2
 
   active:after:w-full
   active:after:left-0
-  active:after:h-0.5
   active:after:bg-white-c-4;
 }
 .link::after {
@@ -50,6 +48,6 @@ h1 {
   bg-white-c-1
   transition-all 
   duration-200
-  w-1 h-0.5 rounded-lg
-  -bottom-0.5 left-1/2;
+  w-1 h-0.5 md:w-1.5 md:h-1 rounded-lg
+  -bottom-0.5 md:-bottom-1 left-1/2;
 }
