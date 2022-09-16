@@ -37,13 +37,16 @@ export default function Start(props: IStartProps) {
   const ballClickHandler = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
-    if (scoreHandler(e)) activeSafeBall();
+    if (scoreHandler(e)) {
+      //first add a SafeBall->> then we can remove old ball
+      activeSafeBall();
+      e.currentTarget.classList.remove("active-ball");
+    }
   };
 
   const scoreHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     if (e.currentTarget.classList.contains("active-ball")) {
       setScore(score + 13); //good shot (+13 score)
-      e.currentTarget.classList.remove("active-ball");
       return true;
     } else {
       setScore(score - 17.75); //miss shot (-17.5 score)
