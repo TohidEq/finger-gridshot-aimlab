@@ -1,5 +1,4 @@
-.game {
-}
+
 .game h1 {
   @apply pt-1;
 }
@@ -16,4 +15,23 @@
 }
 .active-ball {
   @apply bg-white-c-4;
+}
+
+.balls {
+  @apply relative;
+}
+#start-game {
+  @apply bg-[#000]
+    bg-opacity-20
+    backdrop-blur-md
+    absolute 
+    rounded-full
+    top-0
+    bottom-0
+    my-auto
+    left-0
+    right-0
+    mx-auto
+    w-[330px] h-[330px]
+    sm:w-[600px] sm:h-[600px];
 }
