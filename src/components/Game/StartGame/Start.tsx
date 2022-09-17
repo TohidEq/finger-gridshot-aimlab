@@ -37,11 +37,11 @@ export default function Start(props: IStartProps) {
       );
     }
     const timer = setTimeout(() => {
-      console.log("This will run after 2 second!");
+      console.log("This will run after 60 second!");
 
-      //ScoreHandle({ allStats });
-      //navigate("/myscore");
-    }, 2000);
+      ScoreHandle({ allStats });
+      navigate("/myscore");
+    }, 60000);
     return () => clearTimeout(timer);
   };
 

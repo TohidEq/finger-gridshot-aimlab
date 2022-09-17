@@ -1,0 +1,18 @@
+.score-card {
+  @apply border-b-2 border-b-white-c-4
+    mx-auto
+    text-center;
+}
+.score-card * {
+  @apply text-center
+    md:my-4;
+}
+.score-name {
+  @apply text-2xl  md:text-3xl;
+}
+
+.card-items {
+  @apply max-w-md flex flex-wrap justify-between px-2
+    mx-auto items-center
+    text-lg;
+}

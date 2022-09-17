@@ -7,8 +7,8 @@ body {
     rgba(0, 0, 0, 1) 19%,
     rgba(19, 15, 64, 1) 73%
   );
-  @apply h-screen
-    grid content-center
+  @apply min-h-screen
+    pt-5
     text-white-c-1;
 }
 h1 {

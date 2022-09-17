@@ -496,6 +496,15 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.border-b-2{
+  border-bottom-width: 2px;
+}
+
+.border-b-white-c-1{
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(255 243 140 / var(--tw-border-opacity));
+}
+
 body {
   font-family: "Comfortaa", cursive;
   background: rgb(0, 0, 0);
@@ -504,9 +513,8 @@ body {
     rgba(0, 0, 0, 1) 19%,
     rgba(19, 15, 64, 1) 73%
   );
-  display: grid;
-  height: 100vh;
-  align-content: center;
+  min-height: 100vh;
+  padding-top: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(255 243 140 / var(--tw-text-opacity));
 }
@@ -750,5 +758,102 @@ h1{
   #start-game{
     height: 600px;
     width: 600px;
+  }
+}
+
+.score-card{
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom-width: 2px;
+  --tw-border-opacity: 1;
+  border-bottom-color: rgb(192 178 54 / var(--tw-border-opacity));
+  text-align: center;
+}
+
+.score-card *{
+  text-align: center;
+}
+
+@media (min-width: 768px){
+  .score-card *{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.score-name{
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 768px){
+  .score-name{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+.card-items{
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  max-width: 28rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.my-score{
+  text-align: center;
+}
+
+input.score-name{
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  border-radius: 0.25rem;
+  background-color: rgba(0,0,0,0.2);
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 243 140 / var(--tw-text-opacity));
+}
+
+button.save-score{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.25rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 243 140 / var(--tw-bg-opacity));
+  padding: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+button.save-score:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 203 80 / var(--tw-bg-opacity));
+}
+
+button.save-score:active{
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 178 54 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px){
+  button.save-score{
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
