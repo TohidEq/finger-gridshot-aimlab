@@ -1,10 +1,25 @@
-import * as React from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import ScoreHandle from "../ScoreGame/ScoreHandle";
+import Score from "../ScoreGame/ScoreHandle";
 
 export interface IStartProps {}
 
+interface IAllStats {
+  myScore: number;
+  countWellBalls: number;
+  countMissBalls: number;
+}
+
 export default function Start(props: IStartProps) {
-  const [score, setScore] = React.useState<number>(0);
-  var myScore: number = 0;
+  const navigate = useNavigate();
+  const [score, setScore] = useState<number>(0);
+
+  const allStats: IAllStats = {
+    myScore: 0,
+    countWellBalls: 0,
+    countMissBalls: 0,
+  };
 
   const randomNumberInRange = (min: number, max: number) => {
     // get number between min (inclusive) and max (inclusive)
@@ -21,6 +36,13 @@ export default function Start(props: IStartProps) {
         (e: any) => ballClickHandler(e)
       );
     }
+    const timer = setTimeout(() => {
+      console.log("This will run after 2 second!");
+
+      //ScoreHandle({ allStats });
+      //navigate("/myscore");
+    }, 2000);
+    return () => clearTimeout(timer);
   };
 
   const activeSafeBall = () => {
@@ -40,7 +62,7 @@ export default function Start(props: IStartProps) {
 
   const updateScore = () => {
     try {
-      setScore(myScore);
+      setScore(allStats.myScore);
     } catch (error) {
       console.log(error);
     }
@@ -51,16 +73,17 @@ export default function Start(props: IStartProps) {
   ) => {
     if (isActiveBall(e)) {
       //first add a SafeBall->> then we can remove old ball
-      myScore += 13;
-      console.log("myScore:", myScore, "score:", score);
-      updateScore();
+      allStats.myScore += 13;
+      allStats.countWellBalls += 1;
       activeSafeBall();
       e.currentTarget.classList.remove("active-ball");
     } else {
-      myScore -= 17.75;
-      updateScore();
+      allStats.myScore -= 37.75;
+      allStats.countMissBalls += 1;
       console.log("not active");
     }
+
+    updateScore();
   };
 
   const isActiveBall = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -71,25 +94,29 @@ export default function Start(props: IStartProps) {
     }
   };
 
+  useEffect(() => {}, []);
+
   return (
     <div className="game">
-      <h1 id="score-count">{score || "Ready?"}</h1>
+      <h1 id="score-count">
+        <a href="/">{score || "Ready?"}</a>
+      </h1>
       <div className="balls">
         <div className="rows">
-          <div id="ball-1" className="ball"></div>
-          <div id="ball-2" className="ball"></div>
-          <div id="ball-3" className="ball active-ball"></div>
+          <button id="ball-1" className="ball"></button>
+          <button id="ball-2" className="ball"></button>
+          <button id="ball-3" className="ball active-ball"></button>
         </div>
 
         <div className="rows">
-          <div id="ball-4" className="ball active-ball"></div>
-          <div id="ball-5" className="ball"></div>
-          <div id="ball-6" className="ball"></div>
+          <button id="ball-4" className="ball active-ball"></button>
+          <button id="ball-5" className="ball"></button>
+          <button id="ball-6" className="ball"></button>
         </div>
         <div className="rows">
-          <div id="ball-7" className="ball"></div>
-          <div id="ball-8" className="ball active-ball"></div>
-          <div id="ball-9" className="ball"></div>
+          <button id="ball-7" className="ball"></button>
+          <button id="ball-8" className="ball active-ball"></button>
+          <button id="ball-9" className="ball"></button>
         </div>
         <span id="start-game" onClick={(e) => startGame(e)}></span>
       </div>
