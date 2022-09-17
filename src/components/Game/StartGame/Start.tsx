@@ -103,20 +103,20 @@ export default function Start(props: IStartProps) {
       </h1>
       <div className="balls">
         <div className="rows">
-          <button id="ball-1" className="ball"></button>
-          <button id="ball-2" className="ball"></button>
-          <button id="ball-3" className="ball active-ball"></button>
+          <div id="ball-1" className="ball"></div>
+          <div id="ball-2" className="ball"></div>
+          <div id="ball-3" className="ball active-ball"></div>
         </div>
 
         <div className="rows">
-          <button id="ball-4" className="ball active-ball"></button>
-          <button id="ball-5" className="ball"></button>
-          <button id="ball-6" className="ball"></button>
+          <div id="ball-4" className="ball active-ball"></div>
+          <div id="ball-5" className="ball"></div>
+          <div id="ball-6" className="ball"></div>
         </div>
         <div className="rows">
-          <button id="ball-7" className="ball"></button>
-          <button id="ball-8" className="ball active-ball"></button>
-          <button id="ball-9" className="ball"></button>
+          <div id="ball-7" className="ball"></div>
+          <div id="ball-8" className="ball active-ball"></div>
+          <div id="ball-9" className="ball"></div>
         </div>
         <span id="start-game" onClick={(e) => startGame(e)}></span>
       </div>
