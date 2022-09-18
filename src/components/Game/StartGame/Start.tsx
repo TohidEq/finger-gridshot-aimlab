@@ -41,7 +41,7 @@ export default function Start(props: IStartProps) {
 
       ScoreHandle({ allStats });
       navigate("/myscore");
-    }, 60000);
+    }, 3000);
     return () => clearTimeout(timer);
   };
 
