@@ -19,8 +19,9 @@
 
 .delete-score {
   @apply relative text-left w-full
-  bg-white-c-4 text-[#000] rounded
-  transition-all duration-300
+    text-sm  
+    bg-white-c-4 text-[#000] rounded
+    transition-all duration-300
     px-2 py-1 hover:bg-opacity-80
     overflow-hidden;
 }

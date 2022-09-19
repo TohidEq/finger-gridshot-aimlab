@@ -1,4 +1,7 @@
 import DateHandle from "../../DateHandle";
+import GetAllScores from "./GetAllScores";
+import { useNavigate } from "react-router-dom";
+import useScores from "./useScores";
 
 export interface IScoreCardProps {
   scoreStats: IScoreStats;
@@ -23,6 +26,15 @@ export default function ScoreCard(props: IScoreCardProps) {
   const month = myDate.getMonth();
   const year = myDate.getFullYear();
   const time = myDate.getHours() + ":" + myDate.getMinutes();
+
+  const { data: allScores } = useScores();
+  const navigate = useNavigate();
+  const deleteHandle = () => {
+    const newScores = allScores.filter((singleScore) => singleScore.id !== id);
+    localStorage.setItem("allscores", JSON.stringify(newScores));
+    window.location.reload();
+  };
+
   return (
     <div className="score-card">
       <h3 className="score-name">Player: {name}</h3>
@@ -32,7 +44,12 @@ export default function ScoreCard(props: IScoreCardProps) {
             Delete?
             <div className="delete-score-sure">
               Sure?
-              <button className="delete-score-btn bg-red-200">YES</button>
+              <button
+                className="delete-score-btn bg-red-200"
+                onClick={deleteHandle}
+              >
+                YES
+              </button>
             </div>
           </div>
         </div>

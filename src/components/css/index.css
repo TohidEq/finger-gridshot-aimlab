@@ -505,6 +505,10 @@ video {
   border-bottom-color: rgb(255 243 140 / var(--tw-border-opacity));
 }
 
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 body {
   font-family: "Comfortaa", cursive;
   background: rgb(0, 0, 0);
@@ -819,6 +823,8 @@ h1{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
   text-align: left;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
   transition-property: all;
