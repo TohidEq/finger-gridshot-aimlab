@@ -1,11 +1,10 @@
-import * as React from "react";
 import GetAllScores from "../Scores/GetAllScores";
-import useScores from "../Scores/useScores";
 
 export interface ISaveScoreProps {
   myScore: IMyScore;
 }
 interface IMyScore {
+  id: number;
   name: String;
   score: number;
   miss: number;

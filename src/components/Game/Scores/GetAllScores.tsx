@@ -5,11 +5,12 @@ export interface IGetAllScoresProps {}
 const myDate = new Date();
 const defaultScore = [
   {
-    name: "test",
-    score: 22,
-    miss: 234,
-    well: 12,
-    all: 456,
+    id: 1,
+    name: "Test u can delete me",
+    score: 1,
+    miss: 1,
+    well: 1,
+    all: 1,
     date: myDate.toString(),
   },
 ];

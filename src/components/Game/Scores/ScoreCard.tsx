@@ -3,9 +3,11 @@ import DateHandle from "../../DateHandle";
 
 export interface IScoreCardProps {
   scoreStats: IScoreStats;
+  deleteButton?: boolean;
 }
 
 interface IScoreStats {
+  id: number;
   name: String;
   score: number;
   miss: number;
@@ -15,7 +17,7 @@ interface IScoreStats {
 }
 
 export default function ScoreCard(props: IScoreCardProps) {
-  const { name, score, miss, well, all, date } = props.scoreStats;
+  const { name, score, miss, well, all, date, id } = props.scoreStats;
 
   const myDate = DateHandle({ date });
   const day = myDate.getDay();
@@ -25,6 +27,17 @@ export default function ScoreCard(props: IScoreCardProps) {
   return (
     <div className="score-card">
       <h3 className="score-name">Player: {name}</h3>
+      {props.deleteButton ? (
+        <div className="delete-score">
+          Delete?
+          <div className="delete-score-sure">
+            Sure?
+            <button className="delete-score-btn bg-red-200">YES</button>
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
       <div className="card-items">
         <div className="card-item">Score: {score}</div>
         <div className="card-item">

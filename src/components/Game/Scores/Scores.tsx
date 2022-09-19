@@ -7,11 +7,12 @@ import useScores from "./useScores";
 export interface IScoresProps {}
 // all scores
 export default function Scores(props: IScoresProps) {
-  const { data: blogs } = useScores();
-  const myElements = blogs.map((score) => {
+  const { data: scores } = useScores();
+  console.log("scores", scores);
+  const myElements = scores.map((score) => {
     return (
       <>
-        <ScoreCard scoreStats={score} />
+        <ScoreCard scoreStats={score} deleteButton={true} />
       </>
     );
   });

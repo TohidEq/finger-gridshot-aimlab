@@ -11,25 +11,20 @@ interface IAllStats {
   countWellBalls: number;
   countMissBalls: number;
 }
-interface IMyScore {
-  name: String;
-  score: number;
-  miss: number;
-  well: number;
-  all: number;
-  date: string;
-}
-
 export default function MyScore(props: IMyScoreProps) {
   const [isSaved, setIsSaved] = React.useState(false);
   const navigate = useNavigate();
   const myStats: IAllStats = JSON.parse(localStorage.getItem("mystats")!!);
   const [myName, setMyName] = useState<string>("You");
+
+  const myDate = new Date();
+  const myId = myDate.getTime();
+
   console.log("myscore", myStats);
 
   const saveScore = () => {
-    const myDate = new Date();
     const myScore = {
+      id: myId,
       name: myName || "You",
       score: myStats.myScore,
       miss: myStats.countMissBalls,
@@ -74,6 +69,7 @@ export default function MyScore(props: IMyScoreProps) {
       <div className="game-stats">
         <ScoreCard
           scoreStats={{
+            id: myId,
             name: myName || "You",
             score: myStats.myScore,
             miss: myStats.countMissBalls,
