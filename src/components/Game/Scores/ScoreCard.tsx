@@ -1,4 +1,3 @@
-import * as React from "react";
 import DateHandle from "../../DateHandle";
 
 export interface IScoreCardProps {
@@ -28,11 +27,13 @@ export default function ScoreCard(props: IScoreCardProps) {
     <div className="score-card">
       <h3 className="score-name">Player: {name}</h3>
       {props.deleteButton ? (
-        <div className="delete-score">
-          Delete?
-          <div className="delete-score-sure">
-            Sure?
-            <button className="delete-score-btn bg-red-200">YES</button>
+        <div className="card-items">
+          <div className="delete-score">
+            Delete?
+            <div className="delete-score-sure">
+              Sure?
+              <button className="delete-score-btn bg-red-200">YES</button>
+            </div>
           </div>
         </div>
       ) : (

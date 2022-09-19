@@ -3,7 +3,7 @@
     mx-auto
     text-center;
 }
-.score-card * {
+.score-card > * {
   @apply text-center
     md:my-4;
 }
@@ -15,4 +15,37 @@
   @apply max-w-md flex flex-wrap justify-between px-2
     mx-auto items-center
     text-lg;
+}
+
+.delete-score {
+  @apply relative text-left w-full
+  bg-white-c-4 text-[#000] rounded
+  transition-all duration-300
+    px-2 py-1 hover:bg-opacity-80
+    overflow-hidden;
+}
+
+.delete-score-sure {
+  @apply absolute bg-[#000] text-white-c-1  
+    rounded overflow-hidden 
+    bg-opacity-80
+    hover:bg-opacity-100
+    transition-all duration-300 top-0 px-2 py-1 w-40 
+    left-full opacity-0;
+}
+.delete-score:hover .delete-score-sure {
+  @apply left-24 opacity-100;
+}
+
+.delete-score-btn {
+  @apply absolute bg-white-c-1 text-[#000]
+    transition-all duration-300 
+    rounded  w-20
+    top-0 left-full px-2 py-1
+    hover:bg-white-c-2
+    active:bg-white-c-4;
+}
+
+.delete-score-sure:hover .delete-score-btn {
+  @apply opacity-100 left-1/2;
 }
